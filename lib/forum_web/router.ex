@@ -1,4 +1,4 @@
-defmodule ForumWeb.Router do
+ defmodule ForumWeb.Router do
   use ForumWeb, :router
 
   pipeline :browser do
@@ -25,6 +25,7 @@ defmodule ForumWeb.Router do
   scope "/api", ForumWeb do
     pipe_through :api
     resources "/posts", PostController, except: [:new, :edit]
+    resources "/users", UserController, except: [:new, :edit]
   end
 
   # Other scopes may use custom stacks.
